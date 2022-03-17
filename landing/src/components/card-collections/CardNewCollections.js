@@ -6,8 +6,22 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import FavoriteTwoToneIcon from '@mui/icons-material/FavoriteTwoTone';
+import {useState} from "react";
 
 export default function CardNewCollections() {
+
+    //Счетчик лайков
+    const [like, setLike] = useState(0)
+
+    function increment() {
+        //Есть 2 варианта написания 1 - это колбэк функция и 2 - внутри-колбэк, ориентируется предыдущего состояния.
+        // setLike((prevLike)=> {
+        //     return prevLike +1
+        // })
+        setLike(prev => prev + 1)
+    }
+
+
     return (
         <Box xs={1} sx={{width: 'auto', height: 'auto', textAlign: 'left', mt: 15}}>
             <Typography gutterBottom variant="h5" component="div">
@@ -33,8 +47,8 @@ export default function CardNewCollections() {
                                 {item.description} &ensp; {item.price}</Typography>
                             <Button sx={{borderRadius: 5, mr: 12, mt: 2 }} color="inherit" variant="outlined">
                                 Купить</Button>
-                            <IconButton sx={{mt: 2 }} aria-label="fingerprint" color="inherit">
-                                <FavoriteTwoToneIcon/><h6>{item.like}</h6>
+                            <IconButton  onClick={increment} sx={{mt: 2 }} aria-label="like + 1" color="inherit">
+                                <FavoriteTwoToneIcon/><h6>{like}</h6>
                             </IconButton>
                         </CardContent>
                     </Card>

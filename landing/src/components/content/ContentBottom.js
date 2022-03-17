@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 const ContentBottom = () => {
     return (
         <Box sx={{mt: 5}}>
-            {/*Bottom*/}
+            Bottom
         </Box>
     );
 };
