@@ -23,6 +23,11 @@ body {
   margin: 0;
 }
 
+.active {
+  @extend %theme-color-bora-bora;
+  border-radius: 5px;
+}
+
 //#footer {
 //  display: flex;
 //  align: flex-end;

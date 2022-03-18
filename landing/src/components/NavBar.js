@@ -9,7 +9,6 @@ import InputBase from '@mui/material/InputBase';
 import Badge from '@mui/material/Badge';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import MoreIcon from '@mui/icons-material/MoreVert';
 
 import Logo from "../assets/images/logo-apple.png";
 import Image from 'mui-image';
@@ -19,6 +18,8 @@ import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import AddchartIcon from '@mui/icons-material/Addchart';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import {CREATE_NFT_ROUTE, HOME_ROUTE, PERSONAL_ACCOUNT_ROUTE, STATISTICS_ROUTE, SUPPORT_ROUTE} from "../utils/consts";
+import {NavLink} from "react-router-dom";
 
 
 const Search = styled('div')(({theme}) => ({
@@ -100,28 +101,35 @@ export default function NavBar() {
                          sx={{mr: 40}}>
                         <Tooltip title='Каталог' arrow>
                             <IconButton size="large" color="inherit">
-                                <AddPhotoAlternateIcon/>
+                                <NavLink style={{color: 'white'}} to={HOME_ROUTE}><AddPhotoAlternateIcon/>
+                                </NavLink>
                             </IconButton>
                         </Tooltip>
                         <Tooltip title='Статистика' arrow>
                             <IconButton size="large" color="inherit">
-                                <AddchartIcon/>
+                                <NavLink style={{color: 'white'}}
+                                         to={STATISTICS_ROUTE}><AddchartIcon/>
+                                </NavLink>
                             </IconButton>
                         </Tooltip>
                         <Tooltip title='Поддержка' arrow>
                             <IconButton size="large" color="inherit">
                                 <Badge badgeContent={4} color="error">
-                                    <SupportAgentIcon/>
+                                    <NavLink style={{color: 'white'}}
+                                             to={SUPPORT_ROUTE}><SupportAgentIcon/>
+                                    </NavLink>
                                 </Badge>
                             </IconButton>
                         </Tooltip>
                         <Tooltip title='Создать НФТ' arrow>
                             <IconButton
                                 size="large"
-                                aria-label="show 17 new notifications"
+                                aria-label="createNFT"
                                 color="inherit"
                             >
-                                <AddCircleIcon/>
+                                <NavLink style={{color: 'white'}}
+                                         to={CREATE_NFT_ROUTE}><AddCircleIcon/>
+                                </NavLink>
                             </IconButton>
                         </Tooltip>
                         <Tooltip title='Кабинет' arrow>
@@ -132,19 +140,11 @@ export default function NavBar() {
                                 aria-haspopup="true"
                                 color="inherit"
                             >
-                                <AccountCircle/>
+                                <NavLink style={{color: 'white'}}
+                                         to={PERSONAL_ACCOUNT_ROUTE}><AccountCircle/>
+                                </NavLink>
                             </IconButton>
                         </Tooltip>
-                    </Box>
-                    <Box sx={{display: {xs: 'flex', md: 'none'}}}>
-                        <IconButton
-                            size="large"
-                            aria-label="show more"
-                            aria-haspopup="true"
-                            color="inherit"
-                        >
-                            <MoreIcon/>
-                        </IconButton>
                     </Box>
                 </Toolbar>
             </AppBar>

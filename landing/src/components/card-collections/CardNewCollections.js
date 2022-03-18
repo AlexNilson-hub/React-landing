@@ -19,6 +19,7 @@ export default function CardNewCollections() {
         //     return prevLike +1
         // })
         setLike(prev => prev + 1)
+
     }
 
 
@@ -105,3 +106,4 @@ const itemData = [
 
 
 ];
+

@@ -1,0 +1,5 @@
+export const HOME_ROUTE = '/'
+export const STATISTICS_ROUTE = '/statistics'
+export const SUPPORT_ROUTE = '/support'
+export const CREATE_NFT_ROUTE = '/create_nft'
+export const PERSONAL_ACCOUNT_ROUTE = '/account'
